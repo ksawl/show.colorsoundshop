@@ -1,0 +1,166 @@
+.contact-page {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 20px;
+    height: fit-content;
+
+    @media (min-width: 992px) {
+        grid-template-columns: 1fr 35%;
+        grid-template-rows: repeat(2, 1fr);
+        grid-row-gap: 20px;
+    }
+
+    h3 {
+        margin: 0;
+        padding: 0;
+    }
+
+    p {
+        margin: 0;
+        padding: 0;
+        line-height: 1.75;
+    }
+
+    ul,
+    li {
+        height: fit-content;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    a {
+        color: #000;
+        text-decoration: none;
+    }
+}
+
+/** */
+.contact-page__contacts {
+    display: grid;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    grid-template-areas:
+        "title-call"
+        "phones"
+        "soc"
+        "title-address"
+        "address"
+        "mails";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    grid-row-gap: 25px;
+    height: fit-content;
+
+    * {
+        align-self: center;
+    }
+
+    @media (min-width: 600px) {
+        grid-template-areas:
+            "title-call title-address"
+            "phones address"
+            "soc mails";
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        grid-column-gap: 15px;
+        grid-row-gap: 15px;
+    }
+
+    @media (min-width: 992px) {
+        grid-row: 1 / 2;
+        grid-template-areas:
+            "title-call title-address"
+            "phones address"
+            "soc mails";
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        grid-column-gap: 25px;
+        margin-left: 25px;
+    }
+
+    @media (min-width: 1200px) {
+        grid-column-gap: 30%;
+    }
+
+    &-title-call {
+        grid-area: title-call;
+    }
+
+    &-phones {
+        grid-area: phones;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    &-soc {
+        grid-area: soc;
+        display: flex;
+        margin: 0 -5px !important;
+
+        li {
+            justify-content: space-between;
+            align-items: stretch;
+            margin: 0 5px;
+        }
+
+        a {
+            display: block;
+            width: 45px;
+            height: 45px;
+            font-size: 0px;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+    }
+
+    &-title-address {
+        grid-area: title-address;
+    }
+
+    &-address {
+        grid-area: address;
+    }
+
+    &-mails {
+        grid-area: mails;
+    }
+}
+
+/** */
+.contact-page__info {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    background: #f5f8fc url("../img/icon_attention.png") 0 0 no-repeat;
+    background-size: 100px 100px;
+    padding: 35px 30px 15px 45px;
+    height: fit-content;
+
+    @media (min-width: 992px) {
+        grid-row: 2 / 3;
+        margin-left: 10px;
+    }
+}
+
+/** */
+.contact-page__image {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    text-align: center;
+
+    @media (min-width: 992px) {
+        grid-column: 2 / 3;
+        grid-row: 1 / 3;
+    }
+}
+
+/** */
+#google-map {
+    width: 100%;
+    height: 400px;
+    margin-top: 50px;
+
+    @media (min-width: 1200px) {
+        margin-top: 25px;
+    }
+}

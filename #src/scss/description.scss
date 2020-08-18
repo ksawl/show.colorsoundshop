@@ -1,0 +1,62 @@
+.main-product__tab-block {
+    .main-product__description-content {
+        overflow: hidden;
+        transition: max-height 1.5s;
+
+        &_state_collapsed {
+            position: relative;
+            max-height: 200px;
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                display: block;
+                background: linear-gradient(180deg, hsla(0, 0%, 100%, 0), #fff);
+                width: 100%;
+                height: 100px;
+            }
+        }
+    }
+}
+
+.button_type_link {
+    background: 0 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-decoration: none;
+    color: #3e77aa;
+    cursor: pointer;
+
+    &_disabled {
+        position: absolute;
+        top: -500px;
+        left: -500px;
+        visibility: hidden;
+        display: none;
+    }
+}
+
+.main-product__description-toggle {
+    font-size: 16px;
+
+    svg {
+        margin-left: 8px;
+        vertical-align: middle;
+        fill: #3e77aa;
+    }
+}
+
+/** FIX OPEN TAB IN MOBILE */
+/** найти в файле style.css и заменить свойства, значение !important при переносе удалить! */
+@media (max-width: 500px) {
+    .mobile__tab--content {
+        transition: all 1s ease-in-out !important;
+    }
+
+    input:checked~.mobile__tab--content {
+        max-height: 1000vh !important;
+    }
+}
